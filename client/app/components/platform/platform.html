@@ -1,0 +1,10 @@
+<div>
+  <h1>{{ $ctrl.name }}</h1>
+
+  <button 
+    ng-repeat="platform in $ctrl.platforms" 
+    ng-click="$ctrl.selectPlatform(platform)" 
+    class="md-raised md-warn">
+    {{platform.nome}}
+  </button>
+</div>
