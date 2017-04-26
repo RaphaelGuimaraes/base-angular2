@@ -1,12 +1,17 @@
-class PlatformController { 
+import { Inject } from 'angular-es6';
+
+export default class PlatformController extends Inject { 
     platforms;
+
+    static $inject = ['$location', 'platformService'];
     
-    /* @ngInject */
-    constructor($location, platformService) {
+    constructor(...args) {
+        super(...args);
+
+        let {platformService} = this.$inject;
+
         this.name = 'platform';
         this.currentNavItem = 'platform';
-
-        this.$location = $location;
 
         platformService.getPlatforms()
             .then(this._onSuccess)
@@ -22,10 +27,10 @@ class PlatformController {
     }
 
     selectPlatform(platform) {
+        let {$location} = this.$inject;
+        
         localStorage.setItem('selectedPlatform', JSON.stringify(platform));
         // StepsService.setStep(StepsService.PACKAGE);
-        this.$location.path('/home');
+        $location.path('/home');
     }
 }
-
-export default PlatformController;

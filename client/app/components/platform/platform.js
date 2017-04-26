@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import platformComponent from './platform.component';
-import platformService from './platform.service';
+import PlatformService from './platform.service';
 
 let platformModule = angular.module('platform', [
   uiRouter
@@ -18,7 +18,7 @@ let platformModule = angular.module('platform', [
 
 .component('platform', platformComponent)
 
-.service('platformService', platformService)
+.service('platformService', PlatformService)
 
 .name;
 

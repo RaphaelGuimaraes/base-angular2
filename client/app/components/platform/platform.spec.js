@@ -2,15 +2,18 @@ import PlatformModule from './platform'
 import PlatformController from './platform.controller';
 import PlatformComponent from './platform.component';
 import PlatformTemplate from './platform.html';
+import PlatformService from './platform.service';
 
 describe('Platform', () => {
-  let $rootScope, makeController;
+  let $rootScope, $location, platformService, makeController;
 
   beforeEach(window.module(PlatformModule));
-  beforeEach(inject((_$rootScope_) => {
+  beforeEach(inject((_$rootScope_, _$location_, platformService) => {
     $rootScope = _$rootScope_;
+    $location = _$location_;
+    platformService = platformService;
     makeController = () => {
-      return new PlatformController();
+      return new PlatformController($location, platformService);
     };
   }));
 
