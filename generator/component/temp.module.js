@@ -1,9 +1,9 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import <%= name %>Component from './<%= name %>.component';
+import <%= name %>Component from './<%= dashedName %>.component';
 
 let <%= name %>Module = angular.module('<%= name %>', [
-  uiRouter
+    uiRouter
 ])
 
 .component('<%= name %>', <%= name %>Component)
