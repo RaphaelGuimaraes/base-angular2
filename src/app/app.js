@@ -1,6 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import Common from './common/common';
+import Common from './common/common.module';
 import Components from './components/components.module';
 import Pages from './pages/pages.module';
 import AppComponent from './app.component';
