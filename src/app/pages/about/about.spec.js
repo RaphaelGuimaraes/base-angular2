@@ -1,9 +1,9 @@
-import NavbarModule from './navbar'
+import AboutModule from './about.module'
 
-describe('Navbar', () => {
+describe('About', () => {
   let $rootScope, $state, $location, $componentController, $compile;
 
-  beforeEach(window.module(NavbarModule));
+  beforeEach(window.module(AboutModule));
 
   beforeEach(inject(($injector) => {
     $rootScope = $injector.get('$rootScope');
@@ -15,13 +15,18 @@ describe('Navbar', () => {
 
   describe('Module', () => {
     // top-level specs: i.e., routes, injection, naming
+    it('About component should be visible when navigates to /about', () => {
+      $location.url('/about');
+      $rootScope.$digest();
+      expect($state.current.component).to.eq('about');
+    });
   });
 
   describe('Controller', () => {
     // controller specs
     let controller;
     beforeEach(() => {
-      controller = $componentController('navbar', {
+      controller = $componentController('about', {
         $scope: $rootScope.$new()
       });
     });
@@ -37,12 +42,12 @@ describe('Navbar', () => {
 
     beforeEach(() => {
       scope = $rootScope.$new();
-      template = $compile('<navbar></navbar>')(scope);
+      template = $compile('<about></about>')(scope);
       scope.$apply();
     });
 
     it('has name in template', () => {
-      expect(template.find('h1').find('a').html()).to.eq('navbar');
+      expect(template.find('h1').html()).to.eq('about');
     });
 
   });
