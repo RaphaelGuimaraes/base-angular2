@@ -1,8 +1,10 @@
 import angular from 'angular';
-import Package from './package/package';
+import Package from './package/package.module';
+/* inject:imports */
 
 let componentModule = angular.module('app.components', [
-  Package
+    Package,
+/* inject:classes */
 ])
 
 .name;
