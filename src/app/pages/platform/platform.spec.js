@@ -1,4 +1,4 @@
-import PlatformModule from './platform'
+import PlatformModule from './platform.module'
 import PlatformController from './platform.controller';
 import PlatformComponent from './platform.component';
 import PlatformTemplate from './platform.html';

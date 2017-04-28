@@ -1,4 +1,4 @@
-import HeroModule from './hero'
+import HeroModule from './hero.module'
 import HeroController from './hero.controller';
 import HeroComponent from './hero.component';
 import HeroTemplate from './hero.html';

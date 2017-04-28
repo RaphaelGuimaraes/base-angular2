@@ -1,4 +1,4 @@
-import AboutModule from './about'
+import AboutModule from './about.module'
 
 describe('About', () => {
   let $rootScope, $state, $location, $componentController, $compile;

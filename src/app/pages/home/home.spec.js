@@ -1,4 +1,4 @@
-import HomeModule from './home'
+import HomeModule from './home.module'
 
 describe('Home', () => {
   let $rootScope, $state, $location, $componentController, $compile;

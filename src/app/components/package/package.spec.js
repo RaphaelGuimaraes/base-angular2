@@ -1,4 +1,4 @@
-import PackageModule from './package'
+import PackageModule from './package.module';
 import PackageController from './package.controller';
 import PackageComponent from './package.component';
 import PackageTemplate from './package.html';

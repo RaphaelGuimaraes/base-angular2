@@ -1,4 +1,4 @@
-import NavbarModule from './navbar'
+import NavbarModule from './navbar.module'
 
 describe('Navbar', () => {
   let $rootScope, $state, $location, $componentController, $compile;
